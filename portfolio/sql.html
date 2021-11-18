@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rafael Bezerra - SQL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v3.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="../assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="../index.html"><center>Rafael Bezerra da Escóssia</center></a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/bezerraescossia" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/bezerraescossia/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="../index.html#hero" ><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="../index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Skills</span></a></li>
+          <li><a href="../index.html#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="../index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>SQL</h2>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Texto Principal ======= -->
+    
+    <section class="inner-page">
+      <div class="container">
+        <h2>Contextualização</h2>
+        <p>
+          Uma livraria deseja implementar um software que gerencia as vendas da empresa. Para esse projeto foi proposto a utilização de um banco de dados relacional.
+          Nosso papel dentro da equipe contratada para o desenvolvimento desse software é exatamente desenvolver o projeto de banco de dados. 
+          O projeto de modelagem de dados relacional passa essencialmente por três etapas: projeto conceitual, projeto lógico e projeto físico.
+        </p>
+        <p>
+          De acordo com um material do Prof. PhD. Clodoveu Davis publicado na Universidade Federal de Minas Gerais (anexo 1), na modelagem conceitual de dados a ênfase está na simplicidade e legibilidade. O objetivo da abordagem conceitual é capturar os requisitos do mundo real de uma forma simples e significativa que seja compreensível tanto para o projetista do banco de dados quanto para o usuário final.
+        </p>
+        <p>
+          Já no projeto lógico, o objetivo é detalhar o projeto conceitual, aproximando-se mais da fase de implementação. Em outras palavras, é transformar o "mini-mundo" criado na fase conceitual para um modelo mais próximo da linguagem dos SGBDs (Sistema de Gerenciamento de Banco de Dados).
+          Por fim, o projeto físico é de fato a implementação do banco de dados idealizado no projeto lógico para um ambiente SGBD.
+        </p>
+        <p>
+          De uma forma geral, nos temos os seguintes <b>inputs</b> e <b>outputs</b> para cada fase do projeto:
+        <ul>
+          <li>Projeto conceitual: mundo real → diagrama entidade-relacionamento (ER);</li>
+          <li>Projeto lógico: diagrama ER → modelo relacional;</li>
+          <li>Projeto físico: modelo relacional → modelo em SGBD.</li>
+        </ul>
+        </p>
+
+        <h2>Projeto Conceitual</h2>
+
+        <p>
+          A luz da abordagem proposta na contextualização, o projeto inicia-se pelo projeto conceitual.
+          Uma vez compreendida a ideia do diagrama ER, para sair do mundo real e chegar no mini-mundo do diagrama ER não há muito mistério. Durante essa fase, a grande habilidade do projetista está no entendimento do negócio e tradução para o diagrama. Para essa finalidade foi utilizado no projeto o software BrModelo.
+        </p>
+        <p>
+          Após uma reunião com o cliente, objetivando a compreensão do completo funcionamento da livraria, assim como suas regras de negócio, algumas conclusões foram feitas.
+          <ul>
+            <li>Os seguintes dados deverão ser coletados dos clientes: nome, telefone, endereço e email. Além desses, caso o cliente seja pessoa física será coletado o RG e CPF, e, caso seja pessoa jurídica, será coletado o CNPJ e IE;</li>
+            <li>Os livros tem informações associadas: título, categoria, ISBN, ano de publicação, valor, editora e autores da obra;</li>
+            <li>Os livros são fornecidos por editoras e é essencial que se tenha o nome da editora, nome do contato, email e no máximo 2 telefones.</li>
+            <li>Um livro é exclusivo da editora, ou seja, não se pode ter o mesmo livro vindo de várias editoras;</li>
+            <li>O cliente pode comprar um ou mais livros através de um pedido de compra. Mas sempre que ele faz uma compra precisa verificar-se se o livro existe em estoque.</li>
+          </ul>
+          O diagrama abaixo é basicamente a transcrição gráfica das informações fornecidas pelo cliente durante a reunião.
+          <br>
+          <br>
+          <br>
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-15 col-md-15 portfolio-item filter-ss">
+                <div class="portfolio-wrap">
+                  <img src="../assets/img/portfolio/SQL1.png" class="img-fluid" alt="">
+                </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+
+            Eis algumas informações pontuais relevantes sobre o diagrama:
+            <ul>
+              <li>Observe que a entidade CLIENTE possui uma implementação de generalização/especialização, ou seja, a entidade CLIENTE possui duas outras entidades: PESSOA FÍSICA e PESSOA JURÍDICA. Conforme solicitado pela livraria;</li>
+              <li>Note que a relação entre PEDIDO e LIVRO é na verdade uma entidade associativa. Isso ocorre porque a relação entre eles dois é de n:m exigindo, dessa forma, uma entidade intermediária. Nesse contexto, perceba que um PEDIDO contém um ou vários ITENS, e, da mesma forma um LIVRO pode estar contido em um ou vários ITENS (perceba a intermediação feita pela entidade associativa ITENS);</li>
+              <li>As entidades PEDIDOS, LIVRO e ESTOQUE são entidades fracas, uma vez que elas necessitam de outras entidades para existir. Note que não existiria ESTOQUE se LIVRO não existisse, e, da mesma forma, não existiria LIVROS sem EDITORAS. Olhando agora para a outra entidade fraca, um PEDIDO não seria possível sem um CLIENTE. Essas definições serão essenciais na abordagem relacional, principalmente na definição das chaves primárias e estrangeiras.</li>
+            </ul>
+        </p>
+        <h2>Projeto Lógico</h2>
+        <p>
+          As atividades realizadas no projeto lógico podem ser consideradas as mais "burocráticas", uma vez que, várias regras são aplicadas na transformação do diagrama ER para o modelo relacional. 
+          <br><br>
+          Além disso, obtendo-se o modelo relacional, deve-se ainda testar o modelo sobre alguns paradigmas e caso necessário, normaliza-las.
+          Começando pela ordem, primeiramente, deve-se realizar um mapeamento do diagrama ER, gerado no projeto conceitual, para um modelo relacional. Nesse contexto, será utilizado nesse projeto a abordagem sugerida pela Prof. Dr. Daniela Barreiro Claro (anexo 2). O modelo relacional foi realizado no próprio MySQL, mesmo SGBD da implementação, e como resultado temos:
+          <br>
+          <br>
+          <br>
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-15 col-md-15 portfolio-item filter-ss">
+                <div class="portfolio-wrap">
+                  <img src="../assets/img/portfolio/SQL2.png" class="img-fluid" alt="">
+                </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          Observações na transformação das entidades fortes:
+          <ul>
+            <li>A entidade CLIENTE possui no diagrama ER uma implementação de generalização/especificação. Elas transformaram-se nas entidades fracas "pessoa_fisica" e "pessoa_juridica" no modelo relacional;</li>
+            <li>O atributo composto "endereço" da entidade CLIENTE não aparece no modelo relacional, mas seus atributos descendentes sim; </li>
+            <li>O atributo multivalorado da entidade EDITORA no diagrama ER tornou-se em uma nova entidade "contato_editora".</li>
+            <li>A linha contínua ou tracejada indica se aquela relação identifica ou não a entidade "filha". Note que as entidades PEDIDO, LIVRO e ESTOQUE apesar de serem entidade fracas, possuem chaves primárias próprias que por si só as caracterizam.</li>
+          </ul>
+          Uma vez obtido o modelo relacional, realiza-se as normalizações.
+          <ul>
+            <li>Primeira forma normal: diz-se que uma tabela está na primeira forma normal quando ela não contém tabelas aninhadas;</li>
+            <li>Segunda forma normal: uma tabela encontra-se na segunda forma normal quando, além de estar na 1FN, não contém dependências parciais;</li>
+            <li>Terceira forma normal: uma tabela encontra-se na terceira forma normal quando além de estar na segunda forma, não contém dependências transitivas;</li>
+            <li>Quarta forma normal: uma tabela encontra-se na quarta forma normal, quando, além de estar na 3FN, não contém dependências multivaloradas.</li>
+          </ul>
+          Para se aprofundar no tema, recomendo a leitura do livro "projeto de banco de dados" do Prof. Dr. Carlos Alberto Heuser.
+          Uma vez que seguimos corretamente todos os passos anteriores à normalização, nosso modelo relacional já se apresenta na quarta forma normal e já está pronto para implementação.
+        </p>
+        <h2>Projeto Físico</h2>
+        <p>
+          O SGBD escolhido foi o MySQL. Nele, o modelo relacional poderia ser importado diretamente, gerando automaticamente todas as tabelas e as regras de negócio associadas. Entretanto, como o objetivo dessa publicação é demonstrar também as <b>skills</b> em SQL, será realizado a inserção manual por linhas de código. Para facilitar a visualização do código, foi utilizado o MySQL workbench, entretanto seria também possível a inserção do código diretamente no terminal.
+          <br><br>
+          Perceba que quando instancia-se um novo cliente na tabela cliente deveria-se especificar um tipo, pessoa física ou pessoa jurídica. E com isso, adicionar as informações equivalentes ou na tabela pessoa_fisica ou na tabela pessoa_juridica. 
+          Entretanto, essas regras não serão implementadas diretamente no banco de dados, mas sim no software que utilizará o banco de dados. Portanto, nesse primeiro momento o projeto físico consiste apenas da criação das tabelas, sem utilização de <b>triggers</b> e <b>procedures</b>.
+          Abaixo encontra-se os códigos utilizados na criação das tabelas:
+        </p>
+
+        <pre style="color:#21bb5b"><code>
+          CREATE DATABASE LIVRARIA; 
+
+          USE LIVRARIA;
+
+          CREATE TABLE cliente(
+              cod_cliente INT AUTO_INCREMENT,
+              tipo VARCHAR(50) NOT NULL,
+              nome VARCHAR(100) NOT NULL,
+              email VARCHAR(50) NOT NULL,
+              telefone VARCHAR(15) NOT NULL,
+              rua VARCHAR(200) NOT NULL,
+              numero VARCHAR(20) NOT NULL,
+              complemento VARCHAR(20) NULL,
+              cep VARCHAR(9) NOT NULL,
+              cidade VARCHAR(50) DEFAULT 'Natal',
+              estado VARCHAR(50) DEFAULT 'Rio Grande do Norte',
+              PRIMARY KEY (cod_cliente)
+          );
+
+          CREATE TABLE pessoa_fisica(
+              cod_cliente INT NOT NULL,
+              rg VARCHAR(11) NOT NULL,
+              cpf VARCHAR(14) NOT NULL,
+              PRIMARY KEY (cod_cliente),
+              CONSTRAINT fk_cliente_pessoa_fisica FOREIGN KEY (cod_cliente) REFERENCES cliente (cod_cliente)
+          );
+
+          CREATE TABLE pessoa_juridica(
+              cod_cliente INT NOT NULL,
+              cnpj VARCHAR(18) NOT NULL,
+              ie VARCHAR(12) NOT NULL,
+              PRIMARY KEY (cod_cliente),
+              CONSTRAINT fk_cliente_pessoa_juridica FOREIGN KEY (cod_cliente) REFERENCES cliente (cod_cliente)
+          );
+
+          CREATE TABLE pedido(
+              num_pedido INT AUTO_INCREMENT,
+              data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+              valor_pedido DOUBLE NOT NULL,
+              cod_cliente INT NOT NULL,
+              PRIMARY KEY (num_pedido),
+              CONSTRAINT fk_cliente_pedido FOREIGN KEY (cod_cliente) REFERENCES cliente (cod_cliente)
+          );
+
+          CREATE TABLE editora(
+              cod_editora INT AUTO_INCREMENT,
+              nome VARCHAR(100) NOT NULL,
+              contato VARCHAR(100) NOT NULL,
+              email VARCHAR(50) NOT NULL,
+              PRIMARY KEY (cod_editora)
+          );
+
+          CREATE TABLE telefone_editora(
+              telefone VARCHAR(15) NOT NULL,
+              cod_editora INT NOT NULL,
+              PRIMARY KEY (cod_editora),
+              CONSTRAINT fk_editora_contato_editora FOREIGN KEY (cod_editora) REFERENCES editora (cod_editora)
+          );
+
+          CREATE TABLE livro(
+              cod_livro INT AUTO_INCREMENT,
+              nome VARCHAR(50) NOT NULL,
+              autor VARCHAR(150) NOT NULL,
+              categoria VARCHAR(50) NOT NULL,
+              isbn VARCHAR(15) NOT NULL,
+              ano INT NOT NULL,
+              preco DOUBLE,
+              cod_editora INT NOT NULL,
+              PRIMARY KEY (cod_livro),
+              CONSTRAINT fk_editora_livro FOREIGN KEY (cod_editora) REFERENCES editora (cod_editora)
+          );
+
+          CREATE TABLE item_pedido(
+              cod_livro INT NOT NULL,
+              num_pedido INT NOT NULL,
+              quantidade_item VARCHAR(45) NOT NULL,
+              valor_item VARCHAR(45) NOT NULL,
+              PRIMARY KEY (cod_livro, num_pedido),
+              CONSTRAINT fk_livro_item_pedido FOREIGN KEY (cod_livro) REFERENCES livro (cod_livro),
+              CONSTRAINT fk_pedido_item_pedido FOREIGN KEY (num_pedido) REFERENCES pedido (num_pedido)
+          );
+
+          CREATE TABLE estoque(
+              cod_livro INT NOT NULL,
+              quantidade INT NOT NULL,
+              PRIMARY KEY (cod_livro),
+              CONSTRAINT fk_livro_estoque FOREIGN KEY (cod_livro) REFERENCES livro (cod_livro)
+          );
+        </code></pre>
+        <p>
+          Além disso o cliente requisitou que deixa-se preparado já no SGBD algumas views que serão mais utilizadas como:
+          <ul>
+            <li>Top 10 livros mais pedidos;</li>
+            <li>Top 10 Clientes em compras;</li>
+            <li>Livros em falta no estoque.</li>
+          </ul>
+        </p>
+        <pre style="color:#21bb5b"><code>
+          ## Top 10 livros mais pedidos
+
+          CREATE VIEW top10_livros AS 
+          SELECT A.cod_livro, B.nome AS livro, B.autor, C.nome AS editora, B.ano, B.categoria, B.isbn, B.preco, count(*) AS contador
+          FROM item_pedido AS A
+          INNER JOIN livro AS B
+          ON A.cod_livro = B.cod_livro
+          INNER JOIN editora AS C
+          ON B.cod_editora = C.cod_editora
+          GROUP BY A.cod_livro, B.nome, B.autor, C.nome, B.ano, B.categoria, B.isbn, B.preco
+          ORDER BY contador DESC
+          LIMIT 10;
+          
+          ## Livros em falta
+
+          CREATE VIEW emfalta AS
+            SELECT A.cod_livro, A.quantidade, B.nome AS livro, B.autor, C.nome AS editora, B.ano, B.categoria, B.isbn, B.preco
+            FROM estoque AS A
+            INNER JOIN livro AS B
+            ON A.cod_livro = B.cod_livro
+            INNER JOIN editora AS C
+            ON B.cod_editora = C.cod_editora
+            WHERE quantidade = 0;
+            
+          ## Melhores Clientes
+
+          CREATE VIEW top10_clientes AS
+            SELECT A.cod_cliente, B.nome AS cliente, B.email, B.telefone, SUM(A.valor_pedido) AS total_pedido
+            FROM pedido AS A
+            INNER JOIN cliente AS B
+            ON B.cod_cliente = A.cod_cliente
+            GROUP BY A.cod_cliente, B.nome, B.email, B.telefone
+            ORDER BY total_pedido DESC
+            LIMIT 10
+        </code></pre>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/typed.js/typed.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
