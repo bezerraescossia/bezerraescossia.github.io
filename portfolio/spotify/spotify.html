@@ -1,0 +1,208 @@
+<h1 id="playlists-do-spotify">Playlists do Spotify</h1>
+<ul>
+<li><strong>Disciplina</strong>: IMD1155 - Network Analysis <a href="https://github.com/ivanovitchm/network_analysis_2021"><img src="https://img.shields.io/badge/--EC1C24?style=social&amp;logo=Github" alt="Github"></a></li>
+<li><strong>Professor</strong>: Ivanovitch Silva <a href="https://github.com/ivanovitchm/"><img src="https://img.shields.io/badge/--EC1C24?style=social&amp;logo=Github" alt="Github"></a></li>
+<li><strong>Ano Letivo</strong>: 2021.2</li>
+<li><strong>Autor</strong>: Rafael Bezerra da Escóssia Araújo</li>
+</ul>
+<h1 id="contextualiza-o">Contextualização</h1>
+<p>No ano de 2018, o Spotify disponibilizou um dataset com 1.000.000 de playlists em uma competição de <em>machine learning</em>, objetivando melhorar seu algoritmo de recomendação. O dataset contém o nome da música, álbum, artista e vários outros parâmetros de playlists criadas por usuários da plataforma entre 2010 e 2017.</p>
+<p>Nesse trabalho, diferente da competição, não temos como objetivo gerar algoritmos de classificação, mas sim, analisar a rede de co-ocorrência gerada por essas playlists. Em particular, será analisada a rede de co-ocorrência entre os artistas das playlists, ou seja, imagine a seguinte playlist:</p>
+<p align="center">
+  <img src="img/playlists.png" />
+</p>
+
+<p>No arquivo JSON acima, no campo &quot;tracks&quot;, temos as músicas e seus respectivos artistas. Em nossa modelagem, os artistas de uma mesma playlist se relacionam entre si, sendo contada quantas vezes essa relação ocorre, formando o peso dessa relação. Por exemplo, se em uma playlist um artista A aparece três vezes e nessa mesma playlist um artista B aparece quatro vezes, esses artistas terão uma relação de peso 12, como demonstrado abaixo:</p>
+<p align="center">
+  <img src="img/relacao.png" />
+</p>
+
+<p>Nesse contexto, algumas atividades foram propostas na análise dessa rede:</p>
+<ol>
+<li>Gerar uma rede de co-ocorrência com os artistas das playlists;</li>
+<li>Analisar métricas globais (eccentricity, diameter, periphery, radius, center, degree, closeness, betweenness e eigenvector centrality), além de gerar imagens e listar os top 10 de cada métrica;</li>
+<li>Realizar uma análise bivariada, relacionando a contagem e o degree dos nós;</li>
+<li>Realizar uma análise multivariada para as métricas de betweenness, degree, eigenvector e closeness;</li>
+<li>Realizar uma análise de decomposição da rede com os 2 k-cores mais profundos;</li>
+<li>Realizar um deploy da rede utilizando o Gephi.</li>
+</ol>
+<p>Nos próximos passos, iremos realizar cada uma dessas atividades, detalhando todo processo.</p>
+<h1 id="gerando-a-rede-de-co-ocorr-ncia">Gerando a Rede de Co-ocorrência</h1>
+<ul>
+<li>Input: arquivo JSON fornecido pelo spotify <a href="https://www.aicrowd.com/challenges/spotify-million-playlist-dataset-challenge"><img src="https://img.shields.io/badge/--EC1C24?style=social&amp;logo=Google%20Chrome" alt="Chrome"></a></li>
+<li>Output: rede de co-ocorrência</li>
+</ul>
+<p>Para alcançarmos nosso objetivo de gerar uma rede de co-ocorrência, precisamos planejar uma forma de realizá-lo, a partir do arquivo JSON disponibilizado. A solução proposta foi:</p>
+<ol>
+<li>Estruturar um DataFrame do pandas;</li>
+<li>Montar uma matriz de adjacência;</li>
+<li>Transformar a matriz em um grafo networkx.</li>
+<li>Limpeza de dados</li>
+</ol>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/rede.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h1 id="an-lise-de-m-tricas">Análise de Métricas</h1>
+<h2 id="eccentricity-diameter-periphery-radius-and-center">Eccentricity, diameter, periphery, radius and center</h2>
+<p>A excentricidade pode ser definida como a distância entre um nó específico e o nó mais afastado onde se pode chegar partindo do nó em questão.</p>
+<p align="center">
+  <img src="img/ex1.jpeg" />
+</p>
+
+<p>Na rede acima, por exemplo, a excentricidade do nó 1 é igual a 3, uma vez que essa é a menor distância entre o nó 1 e o nó 5, que é o mais distante. Note que quanto menor a excentricidade de um nó, mais próximo dos outros nó ele está, por exemplo, no caso da excentricidade igual a um, esse nó está conectado a todos os outros nós da rede.</p>
+<p>Na rede estudada, a sua distribuição em relação a excentricidade é representada na imagem abaixo:</p>
+<p align="center">
+  <img src="img/eccentricity.png" />
+</p>
+
+<p>O diâmetro dessa rede vale 9, ou seja, esse valor é a maior distância entre dois pares, percorrendo o menor caminho. Dessa forma, os nós <strong>periféricos</strong> da rede, possuem sua excentricidade igual ao diâmetro, e são eles:</p>
+<blockquote>
+<p>&#39;10,000 Maniacs&#39;, &#39;65daysofstatic&#39;, &#39;9 Theory&#39;, &#39;Apparat&#39;, &#39;Blue Wednesday&#39;, &#39;Chambers&#39;, &#39;Cubicolor&#39;, &#39;Message To Bears&#39;, &#39;Super Duper&#39;, &#39;Tom Day&#39;, &#39;Abigail Zsiga&#39;, &#39;Adam Wheatley&#39;, &#39;Chelsea Moon &amp; The Franz Brothers&#39;, &#39;Chelsea Moon &amp; Uncle Daddy&#39;, &#39;Dave Hunt&#39;, &#39;David Potter&#39;, &#39;Jadon Lavik&#39;, &#39;Katy Kinard&#39;, &#39;Page CXVI&#39;, &#39;Sovereign Grace Music&#39;, &#39;The Enfield Hymn Sessions&#39;, &#39;The Outliers&#39;, &#39;Wayfarer&#39;, &#39;Rosario Dawson&#39;, &#39;Vybz Kartel&#39;, &#39;Amy B&#39;, &#39;Anime Kei&#39;, &#39;Kaleptik&#39;, &#39;Linked Horizon&#39;, &#39;NateWantsToBattle&#39;, &#39;PelleK&#39;, &#39;dj-Jo&#39;, &#39;Amethystium&#39;, &#39;Arcangelo Corelli&#39;, &#39;Costumbre&#39;, &#39;Austin Stone Worship&#39;, &#39;Bacilos&#39;, &#39;Four Tet&#39;, &#39;Südwestdeutsches Kammerorchester&#39;, &#39;Cesar Benito&#39;, &#39;Color Therapy&#39;, &#39;Sierra Kidd&#39;, &#39;The Love Bülow&#39;, &#39;Tonbandgerät&#39;, &#39;Völkerball&#39;, &#39;Jackie Evancho&#39;, &#39;David Lee Garza&#39;, &#39;Eddie Gonzalez&#39;, &#39;Elsa Garcia&#39;, &#39;La Mafia&#39;, &#39;La Tropa F&#39;, &#39;Michael Salgado&#39;, &#39;Elida Reyna Y Avante&#39;, &#39;Gary Hobbs&#39;, &#39;La Diferenzia&#39;, &#39;La Fiebre&#39;, &#39;Ram Herrera&#39;, &#39;Fama&#39;, &#39;George Frideric Handel&#39;, &#39;Giacomo Puccini&#39;, &#39;Michael Convertino&#39;, &#39;Grupo Pegasso&#39;, &#39;Inkieto&#39;, &#39;Obzesion&#39;, &#39;Solido&#39;, &#39;Vos Veis&#39;, &#39;Voz Veis&#39;, &#39;Los Igualados&#39;, &#39;Los Traileros Del Norte&#39;, &#39;Los Herederos De Nuevo León&#39;, &#39;Paco Barrón y sus Norteños Clan&#39;, &#39;Tropical Panamá&#39;, &#39;Traditional&#39;, &#39;Random Forest&#39;.</p>
+</blockquote>
+<p>Por outro lado, o raio da rede é a menor distância entre dois pares, percorrendo o menor caminho possível. Nessa rede, o raio vale 5. E, os nós que possuem a mesma excentricidade que o raio, são chamadas de nós <strong>centrais</strong>. São eles:</p>
+<blockquote>
+<p>&#39;Big Sean&#39;, &#39;Drake&#39;, &#39;Future&#39;, &#39;Kanye West&#39;, &#39;Kendrick Lamar&#39;, &#39;Rae Sremmurd&#39;, &#39;Adele&#39;, &#39;Ariana Grande&#39;, &#39;Beyoncé&#39;, &#39;Bruno Mars&#39;, &#39;Calvin Harris&#39;, &#39;Chris Brown&#39;, &#39;Coldplay&#39;, &#39;David Guetta&#39;, &#39;Demi Lovato&#39;, &#39;Ed Sheeran&#39;, &#39;Ellie Goulding&#39;, &#39;Eminem&#39;, &#39;Fall Out Boy&#39;, &#39;Flo Rida&#39;, &#39;JAY Z&#39;, &#39;Jason Derulo&#39;, &#39;Justin Bieber&#39;, &#39;Justin imberlake&#39;, &#39;Katy Perry&#39;, &#39;Kesha&#39;, &#39;Lady Gaga&#39;, &#39;Maroon 5&#39;, &#39;Michael Jackson&#39;, &#39;Miley Cyrus&#39;, &#39;Nelly&#39;, &#39;One Direction&#39;, &#39;OneRepublic&#39;, &#39;Panic! At The Disco&#39;, &#39;Rihanna&#39;, &#39;The Black Eyed Peas&#39;, &#39;B.o.B&#39;, &#39;DJ Khaled&#39;, &#39;Fetty Wap&#39;, &#39;G-Eazy&#39;, &#39;Imagine Dragons&#39;, &#39;J. Cole&#39;, &#39;Kid Cudi&#39;, &#39;Lil Wayne&#39;, &#39;Machine Gun Kelly&#39;, &#39;Major Lazer&#39;, &#39;Nicki Minaj&#39;, &#39;Pitbull&#39;, &#39;Post Malone&#39;, &#39;The Chainsmokers&#39;, &#39;The Weeknd&#39;, &#39;Zedd&#39;, &#39;Twenty One ilots&#39;, &#39;Alessia Cara&#39;, &#39;Hailee Steinfeld&#39;, &#39;Lorde&#39;, &#39;Selena Gomez&#39;, &#39;Shawn Mendes&#39;, The Script&#39;, &#39;DJ Snake&#39;, &#39;Mike Posner&#39;, &#39;Kygo&#39;, &#39;Daft Punk&#39;, &#39;Macklemore &amp; Ryan ewis&#39;, &#39;Avicii&#39;, &#39;DNCE&#39;, &#39;Fifth Harmony&#39;, &#39;Halsey&#39;, &#39;Meghan Trainor&#39;, &#39;Nick Jonas&#39;, &#39;Sia&#39;, &#39;Tove Lo&#39;, &#39;ZAYN&#39;, &#39;Galantis&#39;, &#39;Martin Garrix&#39;.</p>
+</blockquote>
+<p>Note que os nós centrais são nós mais &quot;importantes&quot; na rede, uma vez que estão mais próximos de todos os outros nós da rede.</p>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/excentricidade.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h2 id="degree">Degree</h2>
+<p>O grau de um nó, ou degree em inglês, é uma das propriedades mais requisitadas na análise de redes, e, nada mais é do que a quantidade de arestas que chegam nele, ou o número de nós que se conectam a ele.</p>
+<p>Em nosso caso de estudo, o grafo destacando o grau dos nós, pode ser observado na figura abaixo:</p>
+<p align="center">
+  <img src="img/degree.png" />
+</p>
+
+<blockquote>
+<p><strong>Top 10</strong></p>
+<ol>
+<li>Drake    - 598</li>
+<li>Ed Sheeran -    465</li>
+<li>Rihanna    - 463</li>
+<li>Kanye West -    363</li>
+<li>Chris Brown -    347</li>
+<li>Eminem -    341</li>
+<li>Justin Bieber -    336</li>
+<li>The Weeknd -    330</li>
+<li>Maroon 5 -    297</li>
+<li>Kendrick Lamar -    295</li>
+</ol>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/degree.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h2 id="degree-centrality">Degree Centrality</h2>
+<p>A medida da centralidade do grau (degree centrality) é a normalização do valor do grau dos nós para valores entre 0 e 1. Portanto, ela mede exatamente a mesma propriedade do degree, sendo agora com valores normalizados. E, por esse motivo, é esperado que o grafo que representa essa propriedade, seja similar ao apresentado pelo atributo grau (degree).</p>
+<p align="center">
+  <img src="img/degree_centrality.png" />
+</p>
+
+<p>Observe, também, que a lista dos top 10 dessa propriedade, terá exatamente os mesmos artistas apresentados pelo atributo anterior.</p>
+<blockquote>
+<p><strong>Top 10</strong></p>
+<ol>
+<li>Drake - 0.170613</li>
+<li>Ed Sheeran -    0.132668</li>
+<li>Rihanna    - 0.132097</li>
+<li>Kanye West    - 0.103566</li>
+<li>Chris Brown -    0.099001</li>
+<li>Eminem    - 0.097290</li>
+<li>Justin Bieber -    0.095863</li>
+<li>The Weeknd    - 0.094151</li>
+<li>Maroon 5    - 0.084736</li>
+<li>Kendrick Lamar    - 0.084165</li>
+</ol>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/degree_centrality.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h2 id="closeness-centrality">Closeness Centrality</h2>
+<p>Uma outra forma de medir a centralidade de um nó é determinando o quão próximo ele está dos outros nós. Essa medida pode ser feita, somando todas as distâncias desse nó para os outras. Pode se dizer que o &quot;Closeness Centrality&quot; mede a média das distâncias para todos os outros vértices.</p>
+<p align="center">
+  <img src="img/closeness_centrality.png" />
+</p>
+
+<blockquote>
+<p><strong>Top 10</strong></p>
+<ol>
+<li>Drake - 0.441603</li>
+<li>Ed Sheeran -    0.426710</li>
+<li>Rihanna    - 0.424386</li>
+<li>Justin Bieber -    0.409463</li>
+<li>Eminem    - 0.408270</li>
+<li>Kanye West -    0.407890</li>
+<li>Maroon 5    - 0.406754</li>
+<li>The Weeknd    - 0.406660</li>
+<li>Twenty One Pilots    - 0.404968</li>
+<li>Beyoncé    - 0.404734</li>
+</ol>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/closeness_centrality.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h2 id="betweenness-centrality">Betweenness Centrality</h2>
+<p>Muitos fenômenos que acontecem em redes são baseados em processos difusos. Exemplos incluem a transmissão da informação através da internet, o tráfego de produtos através de portos, ou a transmissão de uma epidemia por meio do contato físico entre indivíduos. Esses exemplos, criaram a necessidade o surgimento de uma outra noção de centralidade, chamada de &quot;betweenness&quot;. Nessa medida, um nó é mais central quanto mais frequente ele está envolvido nos processos.</p>
+<p align="center">
+  <img src="img/betweenness_centrality.png" />
+</p>
+
+<blockquote>
+<p><strong>Top 10</strong></p>
+<ol>
+<li>Drake    - 0.130344</li>
+<li>Ed Sheeran -    0.099335</li>
+<li>Twenty One Pilots -    0.056680</li>
+<li>Banda Sinaloense MS de Sergio Lizárraga -    0.048280</li>
+<li>Pitbull -    0.047606</li>
+<li>Rihanna    - 0.044441</li>
+<li>Michael Jackson -    0.041369</li>
+<li>BTS    - 0.039215</li>
+<li>Getter    - 0.035893</li>
+<li>Bon Iver -    0.033086</li>
+</ol>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/betweenness_centrality.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h2 id="eigenvector-centrality">Eigenvector Centrality</h2>
+<p>Em várias circunstâncias a importância de um nó aumenta quando esse nó apresenta conexões com outros nós importantes. Por exemplo, imagine que você tenha somente um amigo no mundo, entretanto, esse amigo é Cristiano Ronaldo. Então, dependendo do tipo de modelagem dessa rede, você também pode ser considerado uma pessoa importante.</p>
+<p align="center">
+  <img src="img/eigenvector_centrality.png" />
+</p>
+
+<blockquote>
+<p><strong>Top 10</strong></p>
+<ol>
+<li>Drake    - 0.149609</li>
+<li>Rihanna    - 0.146182</li>
+<li>Kanye West    - 0.130860</li>
+<li>Chris Brown    - 0.125971</li>
+<li>Justin Bieber    - 0.125508</li>
+<li>Ed Sheeran    - 0.1228947. </li>
+<li>The Weeknd    - 0.122755</li>
+<li>Eminem    - 0.121230</li>
+<li>Beyoncé    - 0.115985</li>
+<li>Bruno Mars -    0.115708</li>
+</ol>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/eigenvector_centrality.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h1 id="an-lise-bivariada">Análise Bivariada</h1>
+<p>Em nossa análise bivariada, relacionamos o grau dos nós (degree) com a quantidade ou sua probabilidade. Em outras palavras, através desse gráfico, podemos tem uma ideia de como está a distribuição dos graus dessa rede.</p>
+<p align="center">
+  <img src="img/probability_density_function.png" />
+</p>
+
+<p>Observe acima, que a grande maioria dos nós possuem um grau menor do que 15, e, apesar de haver nó com grau 598, pouquíssimos nós tem mais que grau 100.</p>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/bivariada.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h1 id="an-lise-multivariada">Análise Multivariada</h1>
+<p>Através da análise multivariada, percebe-se relações positivas entre algumas propriedades de centralidade nessa rede, ou seja, se uma propriedade aumenta a outra também aumenta. A exemplo disso, é possível ver claramente essa relação entre degree e eigenvector, degree e closeness, eigenvector e closeness.</p>
+<p align="center">
+  <img src="img/all.png" />
+</p>
+
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/multivariada.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h1 id="2-k-cores-mais-profundos">2 k-cores mais Profundos</h1>
+<p>O &quot;k-core&quot; de uma rede é um subconjunto de seus nós, no qual todos nós têm, pelo menos, k conexões um com o outro. Por sua vez, o &quot;k-shell&quot;, são os nós que pertencem a &quot;casca&quot; de elementos com k conexões. Perceba, no caso de estudo abaixo, que utilizamos o parâmetro de 56-core para encontrar o core mais profundo. E, para encontrar os elementos da segunda camada mais profunda, utilizamos o &quot;55-shell&quot;, pois se utilizassemos o 55-core, englobaria também os nós da última camada.</p>
+<p align="center">
+  <img src="img/k-core_sociopatterns.png" />
+</p>
+
+<blockquote>
+<p><strong>55-shell artists:</strong>
+Yo Gotti, Sam Hunt, Frank Ocean, Desiigner, Daft Punk, DRAM, K CAMP</p>
+<p><strong>56-core artists:</strong>
+Kendrick Lamar, Selena Gomez, One Direction, T.I., Flo Rida, Ellie Goulding, Mike Posner, Zara Larsson, Machine Gun Kelly, Pitbull, Bruno Mars, Usher, 2 Chainz, Lady Gaga, Jeremih, Lorde, J. Cole, Post Malone, Fetty Wap, Big Sean, David Guetta, Imagine Dragons, The Chainsmokers, Russ, Justin Timberlake, Meek Mill, Twenty One Pilots, Britney Spears, ZAYN, Kodak Black, Drake, Rae Sremmurd, JAY Z, Sage The Gemini, Young Thug, Flume, Fergie, Major Lazer, Kygo, Kesha, Travis Scott, Miley Cyrus, DJ Khaled, Tove Lo, Maroon 5, Kanye West, French Montana, Beyoncé, Shawn Mendes, Taylor Swift, Khalid, Coldplay, Jason Derulo, B.o.B, Katy Perry, Rihanna, Sia, Ty Dolla \$ign, Chris Brown, Alessia Cara, Sam Smith, The Black Eyed Peas, Lil Uzi Vert, G-Eazy, Tyga, Michael Jackson, Meghan Trainor, Adele, Future, Migos, T-Pain, Gucci Mane, The Weeknd, Trey Songz, Justin Bieber, Logic, Fall Out Boy, Ed Sheeran, Halsey, Lil Wayne, Nicki Minaj, Childish Gambino, Wiz Khalifa, Demi Lovato, Kid Ink, Charlie Puth, Bryson Tiller, A$AP Rocky, Mac Miller, ScHoolboy Q, Kid Cudi, Hailee Steinfeld, Fifth Harmony, Panic! At The Disco, Eminem, 50 Cent, Kevin Gates, YG, Calvin Harris, Zedd, Nelly, OneRepublic, Chance The Rapper, Ariana Grande, DJ Snake.</p>
+</blockquote>
+<p><a href="https://colab.research.google.com/github/bezerraescossia/network-analysis/blob/main/works/spotify/notebooks/profundo.ipynb"><img src="https://img.shields.io/badge/-Código%20no%20colab-black?style=for-the-badge&amp;logo=Google%20Colab" alt="Colab"></a></p>
+<h1 id="deploy-no-gephi">Deploy no Gephi</h1>
+<p>O gephi é um software open-source para análise e visualização de redes. Através do deploy com o gephi, é possível visualizar, manipular, obter métricas da rede de forma muito mais fácil e rápida. No link abaixo, é possível acessar ao deploy da rede estudada. É interessante observar a cor nessa representação, ela representa as comunidades, que é uma métrica que agrupa &quot;clusters&quot; em uma rede. É possível também, no mesmo link, filtrar a rede por comunidades, além de analisar a rede ego de um nó específico.</p>
+<p><a href="https://bezerraescossia.github.io/network-analysis/works/spotify/deploy/"><img src="https://img.shields.io/badge/-Deploy%20link-black?style=for-the-badge&amp;logo=Google%20Chrome" alt="Chrome"></a></p>
