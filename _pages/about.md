@@ -1,25 +1,20 @@
 ---
 layout: about
-title: about
+title: About me
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Data Specialist
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+In today's digital age, the volume, variety, and velocity of data generated are unprecedented. This abundance of data presents a significant challenge: making sense of it all. Businesses are drowning in a sea of unstructured information, struggling to derive actionable insights to drive decision-making, optimize processes, and gain a competitive edge. The problem lies not just in the accumulation of data but in its transformation into meaningful intelligence that fuels innovation and growth.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+As a Data Engineer, I'm deeply immersed in tackling this challenge head-on. I personally craft the intricate architecture that underpins our data ecosystem, meticulously designing, building, and maintaining the infrastructure needed to extract, transform, and load data from diverse sources into formats primed for analysis. My work involves developing and deploying scalable data pipelines, harnessing leading-edge technologies such as cloud computing, distributed frameworks, and big data tools.

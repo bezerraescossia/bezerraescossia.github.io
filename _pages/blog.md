@@ -1,12 +1,12 @@
 ---
 layout: default
-permalink: /blog/
-title: blog
+permalink: /knowledge-pills/
+title: Knowledge Pills
 nav: true
 nav_order: 1
 pagination:
   enabled: true
-  collection: posts
+  collection: knowledge-pills
   permalink: /page/:num/
   per_page: 5
   sort_field: date
