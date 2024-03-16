@@ -155,8 +155,8 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+  - name: linkedin.com
+    rss_url: https://linkedin.com/in/bezerraescossia
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -276,16 +276,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: [ # these tags will be displayed on the front page of your blog
-  "exploratory data analysis", 
-  "database", 
-  "visualization", 
-  "inferential statistics", 
-  "predictive analysis",
-  "time-series analysis",
-  "spatial statistics",
-  "information modeling"
-] 
+display_tags: []# these tags will be displayed on the front page of your blog
 display_categories: [ # these categories will be displayed on the front page of your blog
   "knowledge-pills", 
   "projects", 
