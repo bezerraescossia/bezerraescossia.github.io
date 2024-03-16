@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /knowledge-pills/
-title: Knowledge Pills
+permalink: /blog/
+title: Blog
 nav: true
 nav_order: 1
 pagination:
