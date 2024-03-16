@@ -1,11 +1,12 @@
 ---
 layout: page
+code: proj001
 title: project 1
 description: a project with a background image
+date: 2015-03-15 16:40:16
 img: assets/img/12.jpg
-importance: 1
-category: work
-related_publications: true
+tags: information-modeling data-engineering
+categories: knowledge-pills
 ---
 
 Every project has a beautiful feature showcase page.

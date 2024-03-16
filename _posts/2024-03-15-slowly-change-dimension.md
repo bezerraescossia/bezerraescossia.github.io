@@ -5,7 +5,7 @@ title: Slowly Changings Dimensions
 date: 2015-03-15 16:40:16
 description: What is Slowly Changings Dimensions?
 tags: information-modeling data-engineering
-categories: sample-posts
+categories: knowledge-pills
 ---
 
 ## Teste

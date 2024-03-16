@@ -1,12 +1,19 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
 nav: true
-nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+nav_order: 1
+pagination:
+  enabled: true
+  collection: posts
+  permalink: /page/:num/
+  per_page: 5
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 1 # The number of links before the current page
+    after: 3 # The number of links after the current page
 ---
 
 <!-- pages/projects.md -->
