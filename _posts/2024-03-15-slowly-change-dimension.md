@@ -1,6 +1,6 @@
 ---
 layout: post
-code: p0001
+id: 1
 title: Slowly Changings Dimensions
 date: 2024-03-15 16:40:16
 description: What is Slowly Changings Dimensions?
@@ -9,5 +9,3 @@ categories: knowledge-pills
 ---
 
 ## Teste
-
-...
