@@ -276,8 +276,20 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["data-engineering", "statistics", "predictive-analysis", "time-series", "spatial-statistics"] # these tags will be displayed on the front page of your blog
-display_categories: ["knowledge-pills", "projects", "news"] # these categories will be displayed on the front page of your blog
+display_tags: [ # these tags will be displayed on the front page of your blog
+  "exploratory data analysis", 
+  "database", 
+  "visualization", 
+  "inferential statistics", 
+  "predictive analysis",
+  "time-series analysis",
+  "spatial statistics",
+  "information modeling"
+] 
+display_categories: [ # these categories will be displayed on the front page of your blog
+  "knowledge-pills", 
+  "projects", 
+  "news"] 
 
 # ----------------------------------------------------------------------------
 # Jekyll Scholar
