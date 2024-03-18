@@ -1,9 +1,9 @@
 ---
 layout: post
 id: 1
-title: Slowly Changing Dimensions
+title: What are "Slowly Changing Dimensions" (SCDs)?
 date: 2024-03-15 16:40:16
-description: What is Slowly Changings Dimensions?
+description: Discover the essence of Slowly Changing Dimensions (SCDs) in data management. Explore their role in handling evolving data over time efficiently.
 tags: information-modeling data-engineering
 categories: knowledge-pills
 image: /assets/img/01.excalidraw.png
@@ -28,3 +28,29 @@ SCDs has different types...
 - In **Type IV** we maintain a separate table to store historical data while still updating the main table with current information. Type 4 is suitable when you need to maintain a complete history of changes but want to avoid cluttering the main table with historical data. It's beneficial when you have a large dataset and want to optimize query performance by separating current and historical data.
 
 In summary, Slowly Changing Dimensions help us keep track of how things change over time in data warehouses. By understanding the different types of SCDs, we can manage these changes effectively and keep our data organized and reliable.
+
+---
+
+## Quizz
+
+1. What is the purpose of Slowly Changing Dimensions (SCD) in data warehousing and data management?
+2. What distinguishes Data Warehouses from other types of databases in terms of data volatility?
+3. What does Type I SCD involve in terms of handling changes in data?
+4. When is Type I SCD considered suitable to use?
+5. Describe the approach of Type II SCD in handling changes in data.
+6. What is the primary advantage of using Type II SCD?
+7. How does Type III SCD differ from Type II in terms of maintaining historical data?
+8. In which scenario is Type IV SCD beneficial?
+
+---
+
+## Answers
+
+1. To handle changes in data over time, particularly in dimensional modeling.
+2. Data Warehouses are non-volatile, meaning once data is stored, it doesn’t change (unless dealing with SCDs).
+3. Overwriting the old data with the new data.
+4. When historical changes aren’t important or when only the current state of data matters.
+5. Creating a new record for each change to maintain a complete history of changes over time.
+6. Maintaining a detailed audit trail and analyzing how data evolves over time.
+7. Type III maintains both current and previous versions of data in separate columns.
+8. When there's a need to maintain a complete history of changes but want to optimize query performance by separating current and historical data.
