@@ -6,11 +6,8 @@ date: 2024-03-15 16:40:16
 description: What is Slowly Changings Dimensions?
 tags: information-modeling data-engineering
 categories: knowledge-pills
+thumbnail: /assets/img/01.excalidraw.png
 ---
-
-<p align="center">
-  <img src="/assets/img/01.excalidraw.png" alt="excalidraw">
-</p>
 
 Slowly Changing Dimensions (SCD) is a concept used in data warehousing and data management to handle changes in data over time, particularly in dimensional modeling.
 
