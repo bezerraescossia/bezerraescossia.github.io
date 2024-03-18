@@ -31,7 +31,7 @@ In summary, Slowly Changing Dimensions help us keep track of how things change o
 
 ---
 
-## Quizz
+## Quiz
 
 1. What is the purpose of Slowly Changing Dimensions (SCD) in data warehousing and data management?
 2. What distinguishes Data Warehouses from other types of databases in terms of data volatility?
