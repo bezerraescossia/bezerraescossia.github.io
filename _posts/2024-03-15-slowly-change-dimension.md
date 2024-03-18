@@ -1,7 +1,7 @@
 ---
 layout: post
 id: 1
-title: Slowly Changings Dimensions
+title: Slowly Changing Dimensions
 date: 2024-03-15 16:40:16
 description: What is Slowly Changings Dimensions?
 tags: information-modeling data-engineering
