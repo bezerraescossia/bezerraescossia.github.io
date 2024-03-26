@@ -42,7 +42,7 @@ With exploratory factor analysis, we can identify which aspects are most importa
 So, instead of considering all aspects separately, we can represent the customer experience in terms of a few key factors, such as service quality and facility quality. This provides us with a clearer and more concise way to understand how customers perceive their hotel stay, making interpretation and decision-making based on this information easier.
 
 | Customer  | Service Quality | Facility Quality |
-|-----------|-----------------|------------------|
+|:----------|----------------:|-----------------:|
 | Customer 1 | 4               | 5                |
 | Customer 2 | 3               | 4                |
 | Customer 3 | 5               | 3                |
