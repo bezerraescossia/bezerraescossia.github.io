@@ -1,7 +1,7 @@
 ---
 layout: post
 id: 1
-title: What are "Slowly Changing Dimensions" (SCDs)?
+title: Slowly Changing Dimensions (SCDs)?
 date: 2024-03-15 16:40:16
 description: Discover the essence of Slowly Changing Dimensions (SCDs) in data management. Explore their role in handling evolving data over time efficiently.
 tags: information-modeling data-engineering
