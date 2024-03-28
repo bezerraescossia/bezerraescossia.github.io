@@ -1,3 +1,14 @@
+---
+layout: post
+id: 3
+title: Checksums
+date: 2024-03-26 16:40:16
+description: Exploring the Power of Factor Analysis. Discover how exploratory factor analysis simplifies complex datasets, revealing hidden patterns and key insights for smarter decision-making.
+tags: information-modeling
+categories: knowledge-pills
+image: /assets/img/03.png
+---
+
 ## Introduction to Checksums
 Imagine you're sending a letter to a friend, and you want to make sure it arrives without any of the words changing. A checksum is like a special code at the end of your letter. Before you send it, you count all the letters in your message, and write that number down as your special code. When your friend gets the letter, they count the letters too. If their count matches your special code, they know the letter hasn't changed. In the world of computers, checksums work similarly to make sure data stays correct when it's moved or stored.
 
@@ -10,7 +21,7 @@ Continuing with our library analogy, imagine if every time you wanted to know wh
 ## The Role of Checksums in CDC for Incremental Loads
 Let's combine our concepts. The librarian (CDC) wants to make sure that the list of new and updated books is accurate. Here's where our special code (checksum) comes in handy. For each book that's added or changed, the librarian creates a special code that reflects its current state. If a book gets updated (like getting a new chapter), its special code changes. This way, by looking at the codes, the librarian can quickly tell which books have been updated or are new, without reading every book cover to cover. This makes keeping the library's catalog up to date much easier and faster.
 
-![]()
+![png](/assets/img/03.png)
 
 ## Practical Applications and Benefits
 Using checksums in CDC, like our librarian's special codes, means we can quickly and accurately keep our data up to date. It's like having a super-efficient system to know what's new or changed, ensuring our information is accurate without doing a ton of extra work. This can be especially helpful in businesses where data changes often and needs to be shared across different departments or systems.
