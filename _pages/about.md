@@ -12,11 +12,11 @@ profile:
     <p>+55 (84) 99916-5854</p>
     <p>Brasília, Brazil</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -26,8 +26,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a passionate Data Specialist with deep expertise in Data Engineering and Data Science. My enthusiasm for analytics, combined with a solid foundation in statistics and mathematics, drives my commitment to leveraging data for impactful solutions. Over the years, I have been involved in large-scale data infrastructure projects at a global level, working with major companies to develop, implement, and maintain systems that ingest raw data and generate high-quality, consistent information.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+With certifications in cloud platforms like Google Cloud and AWS, as well as professional certifications in Data Engineering and Data Science from IBM, I have honed my skills in cloud technologies, data integration, and big data frameworks. My technical experience spans working with tools like Apache Spark, Apache Kafka, Kubernetes, Docker, and ETL technologies, among others.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+In addition to my technical expertise, I am particularly interested in the financial sector, where I aim to apply my data analytics skills to help drive business growth and innovation. I see vast potential in using data science to optimize financial processes, improve risk management, and enhance customer experience.
