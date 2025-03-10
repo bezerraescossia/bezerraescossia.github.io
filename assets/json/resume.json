@@ -110,20 +110,6 @@
       "icon": "fa-solid fa-tag"
     },
     {
-      "name": "IBM Cloud Technical Advocate Concepts V2",
-      "date": "2024",
-      "issuer": "IBM",
-      "url": "https://www.ibm.com/training/certification/ibm-cloud-technical-advocate-concepts-v2-C9005700",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Cloud Digital Leader Certification",
-      "date": "2023",
-      "issuer": "Google",
-      "url": "https://cloud.google.com/certification/cloud-digital-leader",
-      "icon": "fa-solid fa-tag"
-    },
-    {
       "name": "IBM Cloud Technical Advocate Foundations V2",
       "date": "2024",
       "issuer": "IBM",
@@ -138,20 +124,6 @@
       "icon": "fa-solid fa-tag"
     },
     {
-      "name": "Communication and Public Speaking",
-      "date": "2023",
-      "issuer": "Escola Conquer",
-      "url": "https://www.escolaconquer.com.br/cursos/communication-and-public-speaking",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantitative Trading",
-      "date": "2023",
-      "issuer": "Asimov Academy",
-      "url": "https://www.asimovacademy.com.br/quantitative-trading",
-      "icon": "fa-solid fa-tag"
-    },
-    {
       "name": "Google Cloud Certified Cloud Digital Leader",
       "date": "2023",
       "issuer": "Google",
@@ -159,38 +131,17 @@
       "icon": "fa-solid fa-tag"
     },
     {
-      "name": "Understanding Google Cloud Security and Operations",
-      "date": "2023",
-      "issuer": "Google Cloud Skills Boost",
-      "url": "https://www.cloudskillsboost.google/course_templates/139",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Infrastructure and Application Modernization with Google Cloud",
-      "date": "2023",
-      "issuer": "Google Cloud Skills Boost",
-      "url": "https://www.cloudskillsboost.google/course_templates/167",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Innovating with Data and Google Cloud",
-      "date": "2023",
-      "issuer": "Google Cloud Skills Boost",
-      "url": "https://www.cloudskillsboost.google/course_templates/122",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Digital Transformation with Google Cloud",
-      "date": "2023",
-      "issuer": "Google Cloud Skills Boost",
-      "url": "https://www.cloudskillsboost.google/course_templates/143",
-      "icon": "fa-solid fa-tag"
-    },
-    {
       "name": "Telecommunications Industry Jumpstart",
       "date": "2023",
       "issuer": "IBM",
       "url": "https://www.ibm.com/training/certification/telecommunications-industry-jumpstart",
+      "icon": "fa-solid fa-tag"
+    },
+    {
+      "name": "Quantitative Trading",
+      "date": "2023",
+      "issuer": "Asimov Academy",
+      "url": "https://www.asimovacademy.com.br/quantitative-trading",
       "icon": "fa-solid fa-tag"
     },
     {
