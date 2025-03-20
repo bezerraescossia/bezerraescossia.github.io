@@ -31,7 +31,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/assets/html/2025-03-20-universal-bank.html";
+          window.location.href = "/blog/2025/universal-bank/";
         
       },
     },{id: "post-the-power-of-spatial-statistics-in-business",
