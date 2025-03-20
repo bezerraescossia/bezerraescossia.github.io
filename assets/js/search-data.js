@@ -125,7 +125,7 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/bzescossia", "_blank");
+          window.open("https://www.linkedin.com/in/bezerraescossia", "_blank");
         },
       },{
         id: 'social-medium',
