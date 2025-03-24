@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Boosting Loan Conversions
+title: "Boosting Loan Conversions: A Predictive Modeling Approach in Fintech Marketing"
 date: 2025-03-20 16:48:00
-description: A Predictive Modeling Approach in Fintech Marketing
+description: "I analyze customer behavior and predict personal loan acceptance using machine learning models. By leveraging R for Exploratory Data Analysis (EDA) and Python (Scikit-learn, TensorFlow, Keras) for predictive modeling, I explore different approaches to enhance targeting and conversion rates."
 tags: classification-models
 categories: projects
 thumbnail: assets/img/2025-03-20-universal-bank.png
