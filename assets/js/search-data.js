@@ -23,22 +23,33 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-boosting-loan-conversions",
+        },{id: "post-geopolítica-digital-o-papel-das-redes-sociais-na-eleiçãao-2024-de-prefeitos-em-minas-gerais",
       
-        title: "Boosting Loan Conversions",
+        title: 'Geopolítica Digital: O papel das Redes Sociais na Eleiçãao 2024 de Prefeitos em... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
       
-      description: "A Predictive Modeling Approach in Fintech Marketing",
+      description: "​O artigo analisa como o investimento em publicidade digital influenciou os resultados das eleições municipais de 2024 em Minas Gerais. Utilizando o Índice de Investimento Relativo em Redes Sociais, os autores investigam a correlação entre os gastos em campanhas digitais e o desempenho eleitoral dos partidos, considerando fatores socioeconômicos e políticos dos municípios.",
+      section: "Posts",
+      handler: () => {
+        
+          window.open("https://medium.com/@bezerraescossia/geopolítica-digital-o-papel-das-redes-sociais-na-eleição-2024-de-prefeitos-em-minas-gerais-9396fb6af958", "_blank");
+        
+      },
+    },{id: "post-boosting-loan-conversions-a-predictive-modeling-approach-in-fintech-marketing",
+      
+        title: "Boosting Loan Conversions: A Predictive Modeling Approach in Fintech Marketing",
+      
+      description: "I analyze customer behavior and predict personal loan acceptance using machine learning models. By leveraging R for Exploratory Data Analysis (EDA) and Python (Scikit-learn, TensorFlow, Keras) for predictive modeling, I explore different approaches to enhance targeting and conversion rates.",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/universal-bank/";
         
       },
-    },{id: "post-the-power-of-spatial-statistics-in-business",
+    },{id: "post-the-power-of-spatial-statistics-in-business-missed-opportunities-and-strategic-potential",
       
-        title: 'The Power of Spatial Statistics in Business <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        title: 'The Power of Spatial Statistics in Business: Missed Opportunities and Strategic Potential <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
       
-      description: "Missed Opportunities and Strategic Potential",
+      description: "This article was developed as part of a course at Fundação Getúlio Vargas (FGV), under the guidance of Prof. Dr. Eduardo de Rezende Francisco, and aims to invite the industry to reflect on the impact of spatial statistical analysis in business. From identifying customer concentration areas to optimizing resource allocation, the potential is immense!",
       section: "Posts",
       handler: () => {
         
