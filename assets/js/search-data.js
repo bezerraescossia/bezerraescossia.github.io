@@ -23,11 +23,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-geopolítica-digital-o-papel-das-redes-sociais-na-eleiçãao-2024-de-prefeitos-em-minas-gerais",
+        },{id: "post-geopolítica-digital-o-papel-das-redes-sociais-na-eleição-2024-de-prefeitos-em-minas-gerais",
       
-        title: 'Geopolítica Digital: O papel das Redes Sociais na Eleiçãao 2024 de Prefeitos em... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        title: 'Geopolítica Digital: O papel das Redes Sociais na Eleição 2024 de Prefeitos em... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
       
-      description: "​O artigo analisa como o investimento em publicidade digital influenciou os resultados das eleições municipais de 2024 em Minas Gerais. Utilizando o Índice de Investimento Relativo em Redes Sociais, os autores investigam a correlação entre os gastos em campanhas digitais e o desempenho eleitoral dos partidos, considerando fatores socioeconômicos e políticos dos municípios.",
+      description: "​O projeto analisa como o investimento em publicidade digital influenciou os resultados das eleições municipais de 2024 em Minas Gerais. Utilizando o Índice de Investimento Relativo em Redes Sociais, os autores investigam a correlação entre os gastos em campanhas digitais e o desempenho eleitoral dos partidos, considerando fatores socioeconômicos e políticos dos municípios.",
       section: "Posts",
       handler: () => {
         
